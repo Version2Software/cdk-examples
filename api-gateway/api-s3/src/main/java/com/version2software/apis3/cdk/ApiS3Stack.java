@@ -51,8 +51,8 @@ public class ApiS3Stack extends Stack {
 
     private RestApi buildApi() {
         return RestApi.Builder.create(this, "MyApi")
-                .restApiName("apis3demo")
-                .binaryMediaTypes(List.of("*/*")) // This enables all binary data types to go to s3 correctly
+                .restApiName("api-s3-example")
+                .binaryMediaTypes(List.of("*/*")) // This enables all binary data types to go to/from s3 correctly
                 .build();
     }
 
