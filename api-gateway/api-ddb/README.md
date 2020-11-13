@@ -78,4 +78,4 @@ To avoid paying for the AWS resources created in this exercise, be sure to destr
 `cdk ls` (List all stacks in the application)\
 `cdk docs`\
 `cdk init app --language java` (Start a new project. Use this command in an empty directory. The other valid language arguments are: typescript, javascript, python, and csharp.)\
-`aws cloudformation describe-stacks --stack-name ApiDdbStack`
+`aws cloudformation describe-stacks --stack-name api-ddb-example`
