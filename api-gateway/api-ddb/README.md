@@ -21,8 +21,8 @@ Install the aws-cli. See https://docs.aws.amazon.com/cli/latest/userguide/cli-ch
 Install the CDK. See https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html#getting_started_prerequisites
 
 # Requirements for this exercise
-JDK (1.8 or later)\
-mvn (3.5 or later)\
+JDK (11 or later)\
+mvn (3.6 or later)\
 git\
 curl (As an alternative you can use Postman. See https://www.postman.com/downloads)
 
