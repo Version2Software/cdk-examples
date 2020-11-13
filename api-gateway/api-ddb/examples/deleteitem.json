@@ -1,8 +1,0 @@
-{
-  "TableName": "api_to_ddb_example",
-  "Key": {
-    "symbol": {
-      "S": "SPY"
-    }
-  }
-}

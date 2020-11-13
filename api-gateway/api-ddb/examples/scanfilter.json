@@ -1,8 +1,0 @@
-{
-  "TableName":"api_to_ddb_example",
-  "FilterExpression": "asset_class = :asset_class",
-  "ExpressionAttributeValues": {
-    ":asset_class":{"S": "equity"}
-  },
-  "ProjectionExpression": "symbol, quantity"
-}
