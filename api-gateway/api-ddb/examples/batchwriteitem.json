@@ -1,6 +1,6 @@
 {
   "RequestItems": {
-    "api_to_ddb_example": [
+    "api-ddb-example": [
       {
         "PutRequest": {
           "Item": {

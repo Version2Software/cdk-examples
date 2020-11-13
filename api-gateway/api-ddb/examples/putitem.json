@@ -1,5 +1,5 @@
 {
-  "TableName":"api_to_ddb_example",
+  "TableName":"api-ddb-example",
   "Item": {
     "symbol" : {
       "S": "SPY"
