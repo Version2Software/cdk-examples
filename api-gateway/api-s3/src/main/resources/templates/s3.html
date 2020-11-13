@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #argtable tr {
+            border: 1px solid gray;
+        }
+        #argtable td {
+            padding: 1em;
+        }
+        label {
+            margin-left: 1em;
+        }
+        /*p {*/
+        /*    margin: 1em;*/
+        /*}*/
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="/">Home</a>
+    <h2 style="text-align: center">ApiGateway to S3</h2>
+
+    <p>Each of the following sends a request to the API Gateway, which in turn sends a request to S3.
+        <br/>
+        Note the HTTP method and arguments for each use case.
+        Be aware that the bucket and object must exist in the same region as the Cloud Formation stack.
+    </p>
+
+    <div class="row">
+        <div class="col-sm">
+            <table id="argtable">
+                <tr>
+                    <td>List all buckets</td>
+                    <td>
+                        <form method="post" action="ListAllBuckets">
+                            <input type="submit" value="GET">
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>List objects in bucket</td>
+                    <td>
+                        <form method="post" action="ListObjects">
+                            <input type="submit" value="GET">
+                            <label>Bucket</label>
+                            <input type="text" name="bucket" th:value="${bucket}">
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Create bucket</td>
+                    <td>
+                        <form method="post" action="CreateBucket">
+                            <input type="submit" value="PUT">
+                            <label>Bucket</label>
+                            <input type="text" name="bucket" th:value="${bucket}">
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Delete bucket</td>
+                    <td>
+                        <form method="post" action="DeleteBucket">
+                            <input type="submit" value="DELETE">
+                            <label>Bucket</label>
+                            <input type="text" name="bucket" th:value="${bucket}">
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Upload object</td>
+                    <td>
+                        <form method="post" action="UploadObject" enctype="multipart/form-data">
+                            <input type="submit" value="PUT">
+                            <label>Bucket</label>
+                            <input type="text" name="bucket" th:value="${bucket}">
+                            <input type="file" id="myFile" name="file">
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Download object</td>
+                    <td>
+                        <form method="post" action="DownloadObject">
+                            <input type="submit" value="GET">
+                            <label>Bucket</label>
+                            <input type="text" name="bucket" th:value="${bucket}">
+                            <label for="object">Object</label>
+                            <input type="text" name="object" id="object" th:value="${object}">
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Delete object</td>
+                    <td>
+                        <form method="post" action="DeleteObject">
+                            <input type="submit" value="DELETE">
+                            <label>Bucket</label>
+                            <input type="text" name="bucket" th:value="${bucket}">
+                            <label for="object">Object</label>
+                            <input type="text" name="object" th:value="${object}">
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm">
+            <div th:if="${status}">
+                Status Code: <span id="statusCode" th:text="${status}"></span>
+            </div>
+            <br/>
+            <table>
+                <tr th:each="h : ${headers}">
+                    <td th:text="${h.name}"></td>
+                    <td th:text="${h.value}"></td>
+                </tr>
+            </table>
+            <br/>
+            <pre th:text="${response}"></pre>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
