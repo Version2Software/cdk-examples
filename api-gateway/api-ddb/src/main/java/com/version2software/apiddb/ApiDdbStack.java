@@ -66,7 +66,7 @@ public class ApiDdbStack extends Stack {
 
     private RestApi buildApi() {
         return RestApi.Builder.create(this, "MyApi")
-                .restApiName("api_to_ddb_example")
+                .restApiName("api-ddb-example")
                 .build();
     }
 
@@ -78,8 +78,8 @@ public class ApiDdbStack extends Stack {
     }
 
     private Table buildTable(RestApi restApi, Role dynRole) {
-        return Table.Builder.create(this, "myTable")
-                .tableName("api_to_ddb_example")
+        return Table.Builder.create(this, "MyTable")
+                .tableName("api-ddb-example")
                 .billingMode(BillingMode.PAY_PER_REQUEST)
                 .removalPolicy(RemovalPolicy.DESTROY)  // Allow deletion of table when using "cdk destroy"
                 .partitionKey(Attribute.builder()
