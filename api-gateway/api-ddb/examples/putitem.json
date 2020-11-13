@@ -1,0 +1,20 @@
+{
+  "TableName":"api_to_ddb_example",
+  "Item": {
+    "symbol" : {
+      "S": "SPY"
+    },
+    "asset_class" : {
+      "S": "equity"
+    },
+    "quantity" : {
+      "N": "100.00"
+    },
+    "purchase_price" : {
+      "N": "300.00"
+    },
+    "current_price": {
+      "N": "315.5"
+    }
+  }
+}
