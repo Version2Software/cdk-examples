@@ -27,10 +27,6 @@ git\
 curl (As an alternative you can use Postman. See https://www.postman.com/downloads)
 
 # Quick Start
-`git clone https://github.com/Version2Software/cdk-example-apiddb.git`
-
-`cd cdk-example-apiddb`
-
 `cdk deploy`  (Uses mvn to compile the Java files, generates the JSON template, and builds the CF stack in AWS.)
 
 The "cdk deploy" command produces two outputs, you will need below: ApiKeyId and MyApiEndpoint123456. These outputs are also available in the AWS console CF stack output tab. 

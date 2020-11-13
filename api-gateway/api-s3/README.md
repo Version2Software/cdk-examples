@@ -24,10 +24,6 @@ mvn (3.6 or later)\
 git
 
 # Quick Start
-`git clone https://github.com/Version2Software/cdk-example-apis3.git`
-
-`cd cdk-example-apis3`
-
 `cdk deploy`  (Uses mvn to compile the Java files, generates the JSON template, and builds the CF stack in AWS.)
 
 The "cdk deploy" command produces an output similar to MyApiEndpoint123456. This output is also available in the AWS console CF stack output tab. 
