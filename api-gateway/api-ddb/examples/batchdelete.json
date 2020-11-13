@@ -1,0 +1,33 @@
+{
+  "RequestItems": {
+    "api_to_ddb_example": [
+      {
+        "DeleteRequest": {
+          "Key": {
+            "symbol": {
+              "S": "SPY"
+            }
+          }
+        }
+      },
+      {
+        "DeleteRequest": {
+          "Key": {
+            "symbol" : {
+              "S": "VBTLX"
+            }
+          }
+        }
+      },
+      {
+        "DeleteRequest": {
+          "Key": {
+            "symbol" : {
+              "S": "QQQ"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

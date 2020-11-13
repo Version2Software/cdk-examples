@@ -1,0 +1,69 @@
+{
+  "RequestItems": {
+    "api_to_ddb_example": [
+      {
+        "PutRequest": {
+          "Item": {
+            "symbol" : {
+              "S": "SPY"
+            },
+            "asset_class" : {
+              "S": "equity"
+            },
+            "quantity" : {
+              "N": "100.00"
+            },
+            "purchase_price" : {
+              "N": "300.00"
+            },
+            "current_price": {
+              "N": "315.5"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "symbol" : {
+              "S": "VBTLX"
+            },
+            "asset_class" : {
+              "S": "bond"
+            },
+            "quantity" : {
+              "N": "1000.00"
+            },
+            "purchase_price" : {
+              "N": "150.00"
+            },
+            "current_price": {
+              "N": "150.02"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "symbol" : {
+              "S": "QQQ"
+            },
+            "asset_class" : {
+              "S": "equity"
+            },
+            "quantity" : {
+              "N": "500.00"
+            },
+            "purchase_price" : {
+              "N": "150.00"
+            },
+            "current_price": {
+              "N": "160.25"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
