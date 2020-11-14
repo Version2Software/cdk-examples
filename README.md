@@ -1,6 +1,10 @@
 # cdk-examples
-Java examples using the AWS CDK (Cloud Development Kit). All examples are based on JDK 11. The CDK will build the Cloud Formation infrastructure using Java constructs.
-The first example use curl to invoke the Api. The second example uses Spring Boot to build a local web server and browser UI. 
+The projects below are Java examples that use the AWS CDK (Cloud Development Kit). All examples are based on JDK 11. The CDK will build the Cloud Formation infrastructure using Java constructs.
+The first example uses curl to invoke the API Gateway. The second example uses Spring Boot and Thymeleaf to build a local web server and browser UI that exercises the API Gateway.
+ 
+ Developed and tested with:
+ - macOS Catalina Version 10.15.7
+ - openjdk version "11.0.8" 2020-07-14
 
 ## Api Gateway examples
 | Example | Description |
