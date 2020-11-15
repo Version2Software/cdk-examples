@@ -11,7 +11,6 @@ This stack will build an API Gateway as a front end to S3, providing functionali
 # Assumptions
 1. You have an AWS account.
 2. You have generated an access key and secret key for an IAM account. Using root account access keys is strongly discouraged.
-3. You have created an EC2 key pair.
 3. You have used "aws configure" to configure a default profile (stored in ~/.aws/config and ~/.aws/credentials).
 
 # Installation
