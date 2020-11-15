@@ -40,7 +40,7 @@ These scenarios will demonstrate the various requests and responses of the diffe
 the API Gateway sends a large event object to Lambda. In the case of nonproxy integration, the API Gateway only sends an event that contains
 what you specify.
 
-Note: this exampple project does not use any authorizaion for the API. It is available to the public. However, the API only exerise one Lambda function that simply echoes back the event the it receives from the gateway.
+Note: this example project does not use any authorizaion for the API. It is available to the public. However, the API only exercises one Lambda function that simply echoes back the event that it receives from the gateway.
 
 # Cleaning up
 To avoid paying for the AWS resources created in this exercise, be sure to destroy the Cloud Formation stack.
