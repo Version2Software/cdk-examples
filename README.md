@@ -10,6 +10,7 @@ The first example uses curl to invoke the API Gateway. The second example uses S
 | Example | Description |
 |---------|-------------|
 | [api-ddb](https://github.com/Version2Software/cdk-examples/tree/main/api-gateway/api-ddb/) | Uses the Api Gateway as a frontend to Dynamo DB directly (i.e., without Lambda in the middle). Uses an Api-Key to protect the Api. Exercises API with curl and Dynamo DB request as the post body. |
+| [api-lambda](https://github.com/Version2Software/cdk-examples/tree/main/api-gateway/api-lambda/) | Uses the Api Gateway as a frontend to Lambda, using proxy and nonproxy integrations. Does not use any authentication. Uses Spring Boot and Thymeleaf to build a simple Browser UI.  |
 | [api-s3](https://github.com/Version2Software/cdk-examples/tree/main/api-gateway/api-s3/) | Uses the Api Gateway as a frontend to S3. Uses IAM authentication. Uses Spring Boot and Thymeleaf to build a simple Browser UI.  |
 
 ## App Sync examples

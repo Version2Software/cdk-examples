@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href = "/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <h2 style="text-align: center">ApiGateway-to-Lambda Demo</h2>
+
+    <p>Lambda will return the HTTP Status Code specified on the request path. In the normal case (i.e., 200), it will return the event that the ApiGateway sent to Lambda. Try each of the following to see the difference bewteen
+        proxy and nonproxy ApiGateway Lambda Services.</p>
+
+    <div class="row">
+        <div class="col-sm">
+            <h1>Lambda Proxy</h1>
+
+            <a href="/proxy/200">/proxy/200</a><br>
+            <a href="/proxy/400">/proxy/400</a><br>
+            <a href="/proxy/500">/proxy/500</a><br>
+
+            <br>
+            Try using an out-of-range status code
+            <br>
+            <a href="/proxy/2000">/proxy/2000</a><br>
+            <br>
+            Try using a noninteger status code
+            <br>
+            <a href="/proxy/xyz">/proxy/xyz</a>
+        </div>
+        <div class="col-sm">
+
+            <h1>Lambda Nonproxy</h1>
+
+            <a href="/nonproxy/200">/nonproxy/200</a><br>
+            <a href="/nonproxy/400">/nonproxy/400</a><br>
+            <a href="/nonproxy/500">/nonproxy/500</a><br>
+            <br>
+            Try using an out-of-range status code.
+            <br>
+            <a href="/nonproxy/2000">/nonproxy/2000</a><br>
+            <br>
+            Try using a noninteger status code.
+            <br>
+            <a href="/nonproxy/xyz">/nonproxy/xyz</a>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:20px; ">
+        <div class="col-sm" style="background-color: lightgrey">
+
+            Status code: <span th:text="${status}"></span>
+            <br><br>
+            Headers:
+            <table>
+                <tr th:each="h : ${headers}">
+                    <td th:text="${h}"></td>
+                </tr>
+            </table>
+            <br>
+            Response:
+            <pre><span th:text="${response}"></span></pre>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
