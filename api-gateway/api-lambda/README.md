@@ -37,8 +37,8 @@ Edit "src/main/resources/application.properties" with the following changes:
 
 Open your browser and enter the url: localhost:8080. You will see a variety of scenarios that exercise the proxy and nonproxy integrations.
 These scenarios will demonstrate the various requests and responses of the different techniques. Notice that in the case of proxy integration,
-the API Gateway sends a large event object to Lambda. In the case of nonproxy integration, the API Gateway only sends and event that contains
-what you specifiy.
+the API Gateway sends a large event object to Lambda. In the case of nonproxy integration, the API Gateway only sends an event that contains
+what you specify.
 
 Note: this exampple project does not use any authorizaion for the API. It is available to the public. However, the API only exerise one Lambda function that simply echoes back the event the it receives from the gateway.
 
