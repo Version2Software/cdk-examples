@@ -6,7 +6,7 @@ def main(event, context):
     #proxy
     if "resource" in event.keys():
         status = event["path"].lstrip('/proxy/')
-
+        event["requestContext"]["accountId"] = "REDACTED"
         return {
            "statusCode": int(status),
            "body": json.dumps(event)
