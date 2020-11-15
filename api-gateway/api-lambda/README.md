@@ -23,6 +23,9 @@ mvn (3.6 or later)\
 git
 
 # Quick Start
+Bootstrap the S3 asset deployment staging area, if you have not already done so in another project. You only need to do this once across all projects:\
+`cdk bootstrap "aws://<YOUR_ACCOUNT_NUMBER>/<YOUR_REGION>"`
+
 `cdk deploy`  (Uses mvn to compile the Java files, generates the JSON template, and builds the CF stack in AWS.)
 
 The "cdk deploy" command produces an output similar to MyApiEndpoint123456. This output is also available in the AWS console CF stack output tab. 
