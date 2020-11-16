@@ -3,9 +3,10 @@
          xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.myorg</groupId>
-    <artifactId>apilambda</artifactId>
+    <groupId>com.version2software.cdk-examples.api-gateway</groupId>
+    <artifactId>api-lambda</artifactId>
     <version>0.1</version>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
