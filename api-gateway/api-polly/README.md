@@ -32,7 +32,7 @@ Edit "src/main/resources/application.properties". Use MyApiEndpoint123456 to set
 Open your browser and enter the url: localhost:8080. Select a voice, enter your text, and click submit. The API Gateway root resource provides two methods. One 
 The GET method retrieves the available English voices. The POST method sends your text and returns an mp3 byte stream.
 
-Note: this example project does not use any authorizaion for the API. It is available to the public. However, the API only exercises one Lambda function that simply echoes back the event that it receives from the gateway.
+Note: this example project does not use any authorizaion for the API. It is available to the public. 
 
 # Cleaning up
 To avoid paying for the AWS resources created in this exercise, be sure to destroy the Cloud Formation stack.
