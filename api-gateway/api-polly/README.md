@@ -4,7 +4,7 @@ This sample text-to-speech project uses the AWS Cloud Development kit (CDK) and 
 # Objectives
 1. Use high-level Java constructs to build and deploy an AWS Cloud Formation stack. 
 2. Build an API Gateway as a front end to Polly.
-3. Build a simple browser client using Spring Boot and Thymeleaf.
+3. Build a simple browser client using Spring Boot and Thymeleaf to invoke the API.
 
 # Assumptions
 1. You have an AWS account.
@@ -17,7 +17,7 @@ Install the CDK. See https://docs.aws.amazon.com/cdk/latest/guide/getting_starte
 
 # Requirements for this exercise
 JDK (11 or later)\
-mvn (3.6 or later)\
+mvn (3.6 or later)
 
 # Quick Start
 `cdk deploy`  (Uses mvn to compile the Java files, generates the JSON template, and builds the CF stack in AWS.)
@@ -29,7 +29,7 @@ Edit "src/main/resources/application.properties". Use MyApiEndpoint123456 to set
 
 `mvn spring-boot:run`
 
-Open your browser and enter the url: localhost:8080. Select a voice, enter your text, and click submit. The API Gateway root resource provides two methods. One 
+Open your browser and enter the url: localhost:8080. Select a voice, enter your text, and click Speak. The API Gateway root resource provides two methods.
 The GET method retrieves the available English voices. The POST method sends your text and returns an mp3 byte stream.
 
 Note: this example project does not use any authorizaion for the API. It is available to the public. 
