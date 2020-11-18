@@ -42,8 +42,8 @@ public class ApiClientController {
         try(final CloseableHttpClient client = HttpClients.createDefault()) {
 
             URIBuilder builder = new URIBuilder(apiUrl);
-//            builder.setParameter("Engine", "standard")
-//                   .setParameter("LanguageCode", "en-GB");
+            // TODO - Add querystring to api method request
+//            builder.setParameter("Engine", "standard");
 
             HttpGet httpGet = new HttpGet(builder.build());
 
@@ -51,8 +51,8 @@ public class ApiClientController {
                 HttpEntity httpEntity = response.getEntity();
                 try (InputStream in = httpEntity.getContent()) {
                     String json = new String(in.readAllBytes());
-                    Map<String, Object> map = new Gson().fromJson(json, Map.class);
-                    List<Map> list = (List) map.get("Voices");
+                    Map<String, List<Map>> map = new Gson().fromJson(json, Map.class);
+                    List<Map> list = map.get("Voices");
 
                     voices = list.stream()
                             .filter(v -> ((String) v.get("LanguageCode")).startsWith("en"))
@@ -104,7 +104,7 @@ public class ApiClientController {
 
     public ServerResponse getSoundHandler(ServerRequest serverRequest) {
         String source = serverRequest.pathVariable("source");
-        byte[] bytes = soundMap.remove(source);
+        byte[] bytes = soundMap.get(source);
 
         return ServerResponse.status(200)
                 .contentType(MediaType.valueOf("audio/mpeg"))
