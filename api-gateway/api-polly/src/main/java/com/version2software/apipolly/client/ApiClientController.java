@@ -89,6 +89,9 @@ public class ApiClientController {
                 try (InputStream in = httpEntity.getContent()) {
 
                     String key = UUID.randomUUID().toString();
+
+                    // This technique would eventually run out of Java memory in a production system.
+                    // An alternative would be to create a temp file using the key as part of the filename.
                     soundMap.put(key, in.readAllBytes());
 
                     return ServerResponse.status(200)
