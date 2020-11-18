@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        div {
+            margin: 1em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2 style="text-align: center">ApiGateway to Polly</h2>
+    <h3 style="text-align: center">Text to Speech</h3>
+    <div class="row">
+        <div class="col-sm">
+            <p>Select voice, enter text and click Speak.</p>
+            <form method="POST">
+                <label>Voice</label>
+                <select name="voice" id="voices">
+                    <option  th:each="v : ${voices}" th:value="${v}" th:selected="${voice} == ${v}">
+                        <span th:text="${v}"></span>
+                    </option>
+                </select>
+                <br><br>
+                <textarea rows=5 cols=80 name="phrase" th:text="${phrase}"></textarea>
+                <br><br>
+                <input type="submit" value="Speak">
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm">
+            <audio controls autoplay="autoplay">
+                <source th:src="${source}">
+            </audio>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
