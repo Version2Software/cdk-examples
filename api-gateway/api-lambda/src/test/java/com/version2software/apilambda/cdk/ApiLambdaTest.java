@@ -1,7 +1,5 @@
 package com.version2software.apilambda.cdk;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import org.junit.Test;
 import software.amazon.awscdk.core.App;
 import software.amazon.awscdk.cxapi.CloudAssembly;
@@ -12,8 +10,6 @@ import java.util.Map;
 import static org.junit.Assert.assertEquals;
 
 public class ApiLambdaTest {
-    private final static ObjectMapper JSON =
-        new ObjectMapper().configure(SerializationFeature.INDENT_OUTPUT, true);
 
     @Test
     public void testStack() {
