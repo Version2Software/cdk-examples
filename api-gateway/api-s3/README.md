@@ -8,20 +8,6 @@ This stack will build an API Gateway as a front end to S3, providing functionali
 2. Build a simple S3 browser client using Spring Boot and Thymeleaf.
 3. Learn how to sign an AWS_IAM auth request using the AWSRequestSigningApacheInterceptor from https://github.com/awslabs/aws-request-signing-apache-interceptor.
 
-# Assumptions
-1. You have an AWS account.
-2. You have generated an access key and secret key for an IAM account. Using root account access keys is strongly discouraged.
-3. You have used "aws configure" to configure a default profile (stored in ~/.aws/config and ~/.aws/credentials).
-
-# Installation
-Install the aws-cli. See https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html \
-Install the CDK. See https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html#getting_started_prerequisites
-
-# Requirements for this exercise
-JDK (11 or later)\
-mvn (3.6 or later)\
-git
-
 # Quick Start
 `cdk deploy`  (Uses mvn to compile the Java files, generates the JSON template, and builds the CF stack in AWS.)
 
@@ -48,15 +34,6 @@ to the API Gateway will be signed using the AWSRequestSigningApacheInterceptor.
 In this demo, the bucket and object must exist in the same region as the Cloud Formation stack.
 
 # Cleaning up
-To avoid paying for the AWS resources created in this exercise, be sure to destroy the Cloud Formation stack.
+When you are finished, don't forget to cleanup to avoid unwanted charges. From the project root directory, issue:\
 
 `cdk destroy`
-
-# Other useful commands
-`cdk synth` (Generate the Cloud Formation template file as YAML, without deploying)\
-`cdk synth -j` (Generate the Cloud Formation template file as JSON, without deploying)\
-`cdk diff`\
-`cdk ls` (List all stacks in the application)\
-`cdk docs`\
-`cdk init app --language java` (Start a new project. Use this command in an empty directory. The other valid language arguments are: typescript, javascript, python, and csharp.)\
-`aws cloudformation describe-stacks --stack-name api-s3-example`

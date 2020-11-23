@@ -11,21 +11,6 @@ We will then use curl to invoke the API, which will send JSON requests directly 
 4. Use curl scripts to invoke the API.
 5. Understand a sampling of DynamoDB requests and responses.
 
-# Assumptions
-1. You have an AWS account.
-2. You have generated an access key and secret key for an IAM account. Using root account access keys is strongly discouraged.
-3. You have configured a default profile in ~/.aws/config and ~/.aws/credentials, either manually or by using "aws configure".
-
-# Installation
-Install the aws-cli. See https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html \
-Install the CDK. See https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html#getting_started_prerequisites
-
-# Requirements for this exercise
-JDK (11 or later)\
-mvn (3.6 or later)\
-git\
-curl (As an alternative you can use Postman. See https://www.postman.com/downloads)
-
 # Quick Start
 `cdk deploy`  (Uses mvn to compile the Java files, generates the JSON template, and builds the CF stack in AWS.)
 
@@ -66,16 +51,5 @@ We are now ready to being using the API. The JSON files in the examples director
 `./scan.sh` (Confirms the deletion)
 
 # Cleaning up
-To avoid paying for the AWS resources created in this exercise, be sure to destroy the Cloud Formation stack. Return to the root directory and destroy it:
-
-`cd ..`\
+When you are finished, don't forget to cleanup to avoid unwanted charges. From the project root directory, issue:\
 `cdk destroy`
-
-# Other useful commands
-`cdk synth` (Generate the Cloud Formation template file as YAML, without deploying)\
-`cdk synth -j` (Generate the Cloud Formation template file as JSON, without deploying)\
-`cdk diff`\
-`cdk ls` (List all stacks in the application)\
-`cdk docs`\
-`cdk init app --language java` (Start a new project. Use this command in an empty directory. The other valid language arguments are: typescript, javascript, python, and csharp.)\
-`aws cloudformation describe-stacks --stack-name api-ddb-example`
