@@ -1,27 +1,31 @@
 package com.version2software.appsynctrivial;
 
-import software.amazon.awscdk.core.App;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import org.junit.Test;
+import software.amazon.awscdk.core.App;
+import software.amazon.awscdk.cxapi.CloudAssembly;
+import software.amazon.awscdk.cxapi.CloudFormationStackArtifact;
 
-import java.io.IOException;
+import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
 public class AppSyncTrivialTest {
-    private final static ObjectMapper JSON =
-        new ObjectMapper().configure(SerializationFeature.INDENT_OUTPUT, true);
 
     @Test
-    public void testStack() throws IOException {
+    public void testStack() {
         App app = new App();
         AppSyncTrivialStack stack = new AppSyncTrivialStack(app, "test");
 
-        // synthesize the stack to a CloudFormation template and compare against
-        // a checked-in JSON file.
-        JsonNode actual = JSON.valueToTree(app.synth().getStackArtifact(stack.getArtifactId()).getTemplate());
-        assertEquals(new ObjectMapper().createObjectNode(), actual);
+        CloudAssembly cloudAssembly = app.synth();
+        CloudFormationStackArtifact artifact = cloudAssembly.getStackArtifact("test");
+
+        Map<String, Map> map = (Map) artifact.getTemplate();
+
+        Map resources = map.get("Resources");
+        Map outputs = map.get("Outputs");
+
+        assertEquals("test", stack.getStackName());
+        assertEquals(5, resources.size());
+        assertEquals(2, outputs.size());
     }
 }
