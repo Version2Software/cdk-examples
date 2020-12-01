@@ -36,8 +36,8 @@ public class AppSyncTrivialStack extends Stack {
         dataSource.createResolver(BaseResolverProps.builder()
                 .typeName("Query")
                 .fieldName("getAnswer")
-                .requestMappingTemplate(MappingTemplate.fromFile("assets/trivialRequestMappingTemplate.json"))
-                .responseMappingTemplate(MappingTemplate.fromFile("assets/trivialResponseMappingTemplate.json"))
+                .requestMappingTemplate(MappingTemplate.fromFile("assets/trivialRequestMappingTemplate.vm"))
+                .responseMappingTemplate(MappingTemplate.fromFile("assets/trivialResponseMappingTemplate.vm"))
                 .build());
 
         CfnOutput.Builder.create(this, "GraphQlUrl")
