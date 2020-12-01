@@ -39,6 +39,7 @@ Build serverless GraphQL APIs.
 | Example | Description |
 |---------|-------------|
 | [appsync-trivial](https://github.com/Version2Software/cdk-examples/tree/main/appsync/appsync-trivial/) | Builds a simple GraphQL API using the NoneDataSource. Uses an Api-Key. Invokes the API using curl.  | 
+| [appsync-lambda](https://github.com/Version2Software/cdk-examples/tree/main/appsync/appsync-lambda/) | Builds a GraphQL API using the LambdaDataSource. Uses an Api-Key. Invokes the API using curl.  | 
 
 
 # Cleaning up
