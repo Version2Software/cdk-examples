@@ -1,0 +1,16 @@
+{"query":"query {
+            invoices(invNumber:100) {
+              invNumber
+              custId
+              purchaseDate
+              lineItems {
+                invNumber
+                partNumber
+                description
+                price
+              }
+            }
+          }"
+}
+
+

@@ -1,0 +1,22 @@
+schema {
+  query: Query
+}
+
+type Query {
+	invoices(invNumber: Int): [Invoice]
+	lineItems(invNumber: Int): [LineItem]
+}
+
+type Invoice {
+   invNumber: Int,
+   custId: String
+   purchaseDate: String
+   lineItems: [LineItem]
+}
+
+type LineItem {
+   invNumber: Int
+   partNumber: String
+   description: String
+   price: Float
+}

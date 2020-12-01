@@ -1,0 +1,8 @@
+{"query":"query {
+            invoices {
+              invNumber
+              custId
+              purchaseDate
+            }
+          }"
+}
