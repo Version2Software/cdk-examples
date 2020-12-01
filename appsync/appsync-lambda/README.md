@@ -9,7 +9,7 @@ Each LambdaDataSource sends a fully populated request to Lambda, without the nee
 3. Define python Lambda functions that correspond to each datasource.
 3. Use a curl scripts to invoke the API. These scripts use an API Key for security.
 
-#Bootstrap
+# Bootstrap
 If you have not already done so in another project, Bootstrap the S3 asset deployment staging area for your Lambda functions.
 You only need to do this once across all projects:\
 `cdk bootstrap "aws://<YOUR_ACCOUNT_NUMBER>/<YOUR_REGION>"`
