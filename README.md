@@ -32,6 +32,7 @@ After cloning this project, cd into each project directory listed below, and fol
 | [api-lambda](https://github.com/Version2Software/cdk-examples/tree/main/api-gateway/api-lambda/) | Uses the API Gateway as a frontend to Lambda, using proxy and nonproxy integrations. Does not use any authentication. Uses Spring Boot and Thymeleaf to build a simple Browser UI.  |
 | [api-polly](https://github.com/Version2Software/cdk-examples/tree/main/api-gateway/api-polly/) | Builds a text-to-speech application using the API Gateway as a frontend to AWS Polly. Does not use any authentication. Uses Spring Boot and Thymeleaf to build a simple Browser UI.  |
 | [api-s3](https://github.com/Version2Software/cdk-examples/tree/main/api-gateway/api-s3/) | Uses the API Gateway as a frontend to S3. Uses IAM authentication. Uses Spring Boot and Thymeleaf to build a simple Browser UI. |
+| [lambda-docker-java](https://github.com/Version2Software/cdk-examples/tree/main/api-gateway/lambda-docker-java/) | Builds a Lambda function using a Java-based Docker container. Invoke the Lambda function using the API Gateway. Does not use any authentication.|
 
 # AppSync examples
 
