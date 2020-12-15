@@ -4,6 +4,7 @@ Some of the examples use curl to invoke the API. Other examples use Spring Boot 
  
  Developed and tested with:
  - macOS Catalina Version 10.15.7
+ - cdk 1.78.0 (build 2c74f4c)
  - openjdk version "11.0.8" 2020-07-14
 
 # Assumptions
