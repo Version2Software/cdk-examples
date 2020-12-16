@@ -16,7 +16,7 @@ This project uses two child Maven modules: app and cdk.
 
 1. Compile the Lambda handler\
 `cd app`\
-`mvn clean compile (not mvn package, since the app.jar not needed; it only needs the Handler.class)`
+`mvn clean package` (This will use shade to create a fat jar. In the future, if you need thirdparty jars, they will also be included in the fat jar.)
 
 2. Deploy to Lambda. This also installs the container in the Elastic Container Registry.\
 `cd ../cdk`\
