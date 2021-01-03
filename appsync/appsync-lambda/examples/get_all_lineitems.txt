@@ -1,9 +1,0 @@
-{"query":"query {
-            lineItems {
-              invNumber
-              partNumber
-              description
-              price
-            }
-          }"
-}

@@ -5,6 +5,7 @@
               purchaseDate
               lineItems {
                 invNumber
+                lineNumber
                 partNumber
                 description
                 price

@@ -4,19 +4,19 @@ schema {
 
 type Query {
 	invoices(invNumber: Int): [Invoice]
-	lineItems(invNumber: Int): [LineItem]
 }
 
 type Invoice {
-   invNumber: Int,
+   invNumber: Int!
    custId: String
    purchaseDate: String
    lineItems: [LineItem]
 }
 
 type LineItem {
-   invNumber: Int
-   partNumber: String
+   invNumber: Int!
+   lineNumber: Int!
+   partNumber: String!
    description: String
    price: Float
 }

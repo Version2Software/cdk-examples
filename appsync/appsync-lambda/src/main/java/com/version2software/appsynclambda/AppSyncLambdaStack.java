@@ -37,19 +37,10 @@ public class AppSyncLambdaStack extends Stack {
 
         SingletonFunction invoicesFunction =
                 SingletonFunction.Builder.create(this, "appsync-lambda-invoices")
+                        .functionName("appsync-lambda-invoices")
                         .description("Returns a list of invoices with line items")
-                        .code(Code.fromAsset("lambda"))
+                        .code(Code.fromAsset("lambda/invoice"))
                         .handler("invoices.main")
-                        .timeout(Duration.seconds(300))
-                        .runtime(Runtime.PYTHON_3_8)
-                        .uuid(UUID.randomUUID().toString())
-                        .build();
-
-        SingletonFunction lineItemsFunction =
-                SingletonFunction.Builder.create(this, "appsync-lambda-lineitems")
-                        .description("Returns a list of line items")
-                        .code(Code.fromAsset("lambda"))
-                        .handler("lineitems.main")
                         .timeout(Duration.seconds(300))
                         .runtime(Runtime.PYTHON_3_8)
                         .uuid(UUID.randomUUID().toString())
@@ -57,13 +48,24 @@ public class AppSyncLambdaStack extends Stack {
 
         api.addLambdaDataSource("MyInvoicesSource", invoicesFunction)
                 .createResolver(BaseResolverProps.builder()
-                .typeName("Query")
-                .fieldName("invoices")
-                .build());
+                        .typeName("Query")
+                        .fieldName("invoices")
+                        .build());
+
+        SingletonFunction lineItemsFunction =
+                SingletonFunction.Builder.create(this, "appsync-lambda-lineitems")
+                        .functionName("appsync-lambda-lineitems")
+                        .description("Returns a list of line items")
+                        .code(Code.fromAsset("lambda/lineitems"))
+                        .handler("lineitems.main")
+                        .timeout(Duration.seconds(300))
+                        .runtime(Runtime.PYTHON_3_8)
+                        .uuid(UUID.randomUUID().toString())
+                        .build();
 
         api.addLambdaDataSource("MyLineItemsSource", lineItemsFunction)
                 .createResolver(BaseResolverProps.builder()
-                .typeName("Query")
+                .typeName("Invoice")
                 .fieldName("lineItems")
                 .build());
 

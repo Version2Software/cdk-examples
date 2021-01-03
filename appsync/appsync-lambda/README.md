@@ -27,9 +27,8 @@ To exercise the API, change into the examples directory, and run each script.
 
 `cd examples`
 
-`./get_all_invoices.sh`
+`./get_all_invoices.sh`\
 `./get_one_invoice.sh`
-`./get_all_lineitems.sh`
 
 # Cleaning up
 When you are finished, don't forget to cleanup to avoid unwanted charges. From the project root directory, issue:\
