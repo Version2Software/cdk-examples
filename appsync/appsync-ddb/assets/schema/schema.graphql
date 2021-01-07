@@ -1,0 +1,61 @@
+type Invoice {
+	invoiceId: String
+	purchaseDate: String
+	customer: Customer
+	lineItems: [LineItem]
+}
+
+type LineItem {
+	invoiceId: String
+	lineId: String
+	quantity: Int
+	product: Product
+}
+
+type Product {
+	productId: String!
+	price: Float
+	description: String!
+}
+
+type Customer {
+	customerId: String!
+	lastName: String
+	shipAddress: Address
+	billAddress: Address
+}
+
+type Address {
+	customerId: String
+	addressId: String!
+	streetNumber: String
+	streetDir: String
+	streetName: String
+	city: String
+	state: String
+	zip: String
+}
+
+type Status {
+	status: String
+}
+
+type Mutation {
+	addInvoice(invoiceId: String, purchaseDate: String, customerId: String): Invoice
+	addLineItem(invoiceId: String, lineId: String, quantity: Int, productId: String): LineItem
+	addProduct(productId: String, price: Float, description: String): Product
+	addCustomer(customerId: String, lastName: String): Customer
+	addAddress(customerId: String, addressId: String, streetNumber: String, streetDir: String,
+			   streetName: String, city: String, state: String, zip: String): Address
+	updateProductPrice(productId: String, price: Float): Status
+	deleteInvoice(invoiceId: String): Status
+}
+
+type Query {
+	invoice(invoiceId: String): Invoice
+}
+
+schema {
+	query: Query
+	mutation: Mutation
+}

@@ -1,0 +1,4 @@
+#set($addr = {"customerId":$ctx.result.PK,
+              "addressId":$ctx.result.SK
+             })
+$utils.toJson($addr)

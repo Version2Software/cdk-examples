@@ -42,6 +42,7 @@ Build serverless GraphQL APIs.
 |---------|-------------|
 | [appsync-trivial](https://github.com/Version2Software/cdk-examples/tree/main/appsync/appsync-trivial/) | Builds a simple GraphQL API using the NoneDataSource. Uses an Api-Key. Invokes the API using curl.  | 
 | [appsync-lambda](https://github.com/Version2Software/cdk-examples/tree/main/appsync/appsync-lambda/) | Builds a GraphQL API using the LambdaDataSource. Uses an Api-Key. Invokes the API using curl.  | 
+| [appsync-ddb](https://github.com/Version2Software/cdk-examples/tree/main/appsync/appsync-ddb/) | Builds a GraphQL API using VTL to integrate directly with DynamoDB. Uses an Api-Key. Uses Spring Boot and Thymeleaf to build a simple Browser UI.  | 
 
 
 # Cleaning up

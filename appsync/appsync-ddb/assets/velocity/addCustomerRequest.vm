@@ -1,0 +1,11 @@
+{
+    "version" : "2017-02-28",
+    "operation" : "PutItem",
+    "key" : {
+        "PK": $util.dynamodb.toDynamoDBJson($ctx.args.customerId),
+        "SK": $util.dynamodb.toDynamoDBJson($ctx.args.customerId)
+    },
+    "attributeValues" : {
+        "lastName": $util.dynamodb.toDynamoDBJson($ctx.args.lastName)
+    }
+}

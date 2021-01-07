@@ -1,0 +1,15 @@
+#set($ids = [])
+
+## Invoice ID
+#set($map = {"PK":$util.dynamodb.toString($ctx.stash.invoiceId),
+             "SK":$util.dynamodb.toString($ctx.stash.invoiceId)})
+$util.qr($ids.add($map))
+
+## Line Item IDs
+#foreach($item in $ctx.result.items)
+    #set($map = {"PK":$util.dynamodb.toString($item.PK),
+                 "SK":$util.dynamodb.toString($item.SK)})
+    $util.qr($ids.add($map))
+#end
+
+$utils.toJson($ids)

@@ -1,0 +1,4 @@
+#set($inv = {"invoiceId":$ctx.result.PK,
+             "purchaseDate":$ctx.result.purchaseDate,
+             "customerId":$ctx.result.customerId})
+$utils.toJson($inv)

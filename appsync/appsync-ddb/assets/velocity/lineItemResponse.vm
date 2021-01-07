@@ -1,0 +1,12 @@
+#set($lineItems = [])
+
+#foreach($item in $ctx.result.items)
+    #set($added = $lineItems.add({
+        "invoiceId":$item.PK,
+        "lineId":$item.SK,
+        "quantity":$item.quantity,
+        "productId":$item.productId
+    }))
+#end
+
+$utils.toJson($lineItems)

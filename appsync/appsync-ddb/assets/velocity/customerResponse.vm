@@ -1,0 +1,5 @@
+#set($cust = {"customerId":$ctx.result.PK,
+              "lastName":$ctx.result.lastName,
+              "shipAddress":$ctx.result.shipAddress,
+              "billAddress":$ctx.result.billAddress})
+$utils.toJson($cust)

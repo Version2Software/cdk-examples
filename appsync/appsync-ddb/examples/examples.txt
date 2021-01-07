@@ -1,0 +1,174 @@
+Copy and paste each mutation and query into the Spring Boot web page at http://localhost:8080/query
+
+Example 1. Add products, a customer and addresses
+
+mutation {
+   addProduct(productId: "PROD#TAC1", price: 19.99, description: "Tactical Umbrella") {
+      productId
+      price
+      description
+   }
+}
+
+mutation {
+   addProduct(productId: "PROD#TAC2", price: 9.99, description: "Tactical Men's European Handbag") {
+      productId
+      price
+      description
+  }
+}
+
+mutation {
+  addCustomer(customerId: "CUST#1000", lastName: "Owens") {
+    customerId
+  }
+}
+
+mutation {
+  addAddress(customerId: "CUST#1000", addressId: "ADDR#SHIP", streetNumber: "1600", streetDir: "NW", streetName: "Pennsylvania", city: "Washington", state: "DC", zip: "20500") {
+    customerId
+    addressId
+  }
+}
+
+mutation {
+  addAddress(customerId: "CUST#1000", addressId: "ADDR#BILL", streetNumber: "1600", streetDir: "NW", streetName: "Pennsylvania", city: "Washington", state: "DC", zip: "20500") {
+    customerId
+    addressId
+  }
+}
+
+Example 2. Add an invoice and two line items
+
+mutation {
+  addInvoice(invoiceId: "INV#700", purchaseDate: "20201227", customerId: "CUST#1000") {
+      invoiceId
+      purchaseDate
+  }
+}
+
+mutation {
+  addLineItem(invoiceId: "INV#700", lineId: "LIN#1", quantity: 5, productId: "PROD#TAC1") {
+      quantity
+  }
+}
+
+mutation {
+  addLineItem(invoiceId: "INV#700", lineId: "LIN#2", quantity: 10, productId: "PROD#TAC2") {
+      quantity
+  }
+}
+
+Example 4. Find the invoice
+
+query {
+    invoice(invoiceId: "INV#700")  {
+      invoiceId
+      purchaseDate
+    }
+}
+
+Example 5. Find the invoice with its line items and products
+
+query {
+    invoice(invoiceId: "INV#700")  {
+      invoiceId
+      purchaseDate
+      lineItems {
+          lineId
+          quantity
+          product {
+               price
+               description
+           }
+      }
+    }
+}
+
+Example 6. Find the invoice with its customer and addresses
+
+query {
+    invoice(invoiceId: "INV#700")  {
+      invoiceId
+      customer {
+          customerId
+          lastName
+          shipAddress {
+              city
+              state
+              zip
+          }
+          billAddress {
+            city
+            state
+            zip
+          }
+      }
+   }
+ }
+
+Example 7. Query the type system
+
+{
+  __schema {
+    types {
+      name
+    }
+  }
+}
+
+{
+  __schema {
+    queryType {
+      name
+    }
+  }
+}
+
+{
+  __schema {
+    directives {
+      name,
+      description
+    }
+  }
+}
+
+{
+  __type(name: "Invoice") {
+    name
+    kind
+  }
+}
+
+{
+  __type(name: "Invoice") {
+    name
+    fields {
+      name
+      type {
+        name
+        kind
+        ofType {
+          name
+          kind
+        }
+      }
+    }
+  }
+}
+
+Example 9. Update the price of a line item
+
+mutation {
+  updateProductPrice(productId: "PROD#TAC1", price: 29.99) {
+    status
+  }
+}
+
+Example 10. Delete the invoice
+mutation {
+  deleteInvoice(invoiceId: "INV#700") {
+    status
+  }
+}

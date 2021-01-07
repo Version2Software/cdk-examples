@@ -1,0 +1,2 @@
+#set($cust = {"customerId":$ctx.result.PK})
+$utils.toJson($cust)

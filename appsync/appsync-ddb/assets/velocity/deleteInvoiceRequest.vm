@@ -1,0 +1,2 @@
+$util.qr($ctx.stash.put("invoiceId", $ctx.args.invoiceId))
+{}

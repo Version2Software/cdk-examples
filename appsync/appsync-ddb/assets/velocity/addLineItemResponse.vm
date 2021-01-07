@@ -1,0 +1,5 @@
+#set($lineItem = {"invoiceId":$ctx.result.PK,
+                  "lineId":$ctx.result.SK,
+                  "quantity":$ctx.result.quantity
+})
+$utils.toJson($lineItem)

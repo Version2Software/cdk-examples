@@ -1,0 +1,16 @@
+{
+    "version" : "2017-02-28",
+    "operation" : "PutItem",
+    "key" : {
+        "PK": $util.dynamodb.toDynamoDBJson($ctx.args.customerId),
+        "SK": $util.dynamodb.toDynamoDBJson($ctx.args.addressId),
+    },
+    "attributeValues" : {
+        "streetNumber":$util.dynamodb.toDynamoDBJson($ctx.args.streetNumber),
+        "streetDir":$util.dynamodb.toDynamoDBJson($ctx.args.streetDir),
+        "streetName":$util.dynamodb.toDynamoDBJson($ctx.args.streetName),
+        "city":$util.dynamodb.toDynamoDBJson($ctx.args.city),
+        "state":$util.dynamodb.toDynamoDBJson($ctx.args.state),
+        "zip":$util.dynamodb.toDynamoDBJson($ctx.args.zip)
+    }
+}

@@ -1,0 +1,4 @@
+#set($prod = {"productId":$ctx.result.PK,
+              "price":$ctx.result.price,
+              "description":$ctx.result.description})
+$utils.toJson($prod)

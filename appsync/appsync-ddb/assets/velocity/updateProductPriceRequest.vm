@@ -1,0 +1,14 @@
+{
+    "version" : "2018-05-29",
+    "operation" : "UpdateItem",
+    "key": {
+        "PK" : $util.dynamodb.toDynamoDBJson($ctx.args.productId),
+        "SK" : $util.dynamodb.toDynamoDBJson($ctx.args.productId)
+    },
+    "update" : {
+        "expression" : "SET price = :p",
+        "expressionValues" : {
+            ":p" : $util.dynamodb.toDynamoDBJson($ctx.args.price)
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "version" : "2018-05-29",
+    "operation" : "BatchDeleteItem",
+    "tables" : {
+        "appsync-ddb-example-table": $util.toJson($ctx.prev.result)
+    }
+}

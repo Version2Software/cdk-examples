@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #argtable tr {
+            border: 1px solid gray;
+        }
+        #argtable td {
+            padding: 1em;
+        }
+        label {
+            margin-left: 1em;
+        }
+        container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+<h2>AppSync to DDB</h2>
+
+<form method="post">
+    <textarea cols=120 rows=20 name="query" th:text="${query}"></textarea>
+    <br>
+    <input type="submit">
+</form>
+JSON Request
+<pre>
+<textarea cols=120 rows=5 th:text="${request}"/>
+</pre>
+JSON Response
+<pre>
+<textarea cols=120 rows=20 th:text="${response}"/>
+</pre>
+
+</div>
+
+</body>
+</html>
