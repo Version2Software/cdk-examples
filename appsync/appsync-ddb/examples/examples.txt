@@ -167,6 +167,7 @@ mutation {
 }
 
 Example 10. Delete the invoice
+
 mutation {
   deleteInvoice(invoiceId: "INV#700") {
     status

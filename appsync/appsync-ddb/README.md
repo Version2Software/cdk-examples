@@ -3,7 +3,7 @@ This sample project uses the AWS Cloud Development kit (CDK) and Spring Boot to 
 
 # Objectives
 1. Use Java constructs to build and deploy an AWS Cloud Formation stack that implements an AppSync front end to DynamoDB.
-2. Use the Velocity Template Language to implement GraphQL Query and Mutation resolvers that integrate directly with DynamoDB
+2. Use the Velocity Template Language to implement GraphQL Query and Mutation resolvers that integrate directly with DynamoDB.
 3. Utilize a single-table design with DynamoDB. The example uses invoices, lineitems, products, customers, and addresses all contained in a single table.
 4. Build a simple browser client using Spring Boot and Thymeleaf. Use the browser window to post GraphQL queries.
 
