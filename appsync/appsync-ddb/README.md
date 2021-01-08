@@ -18,8 +18,15 @@ Edit "src/main/resources/application.properties" with the following changes:
 
 `mvn spring-boot:run`
 
-Open your browser and enter the url: http://localhost:8080/query. Use the file examples/example.txt to copy and paste each query and mutation into to browser window.
-Click submit to post the query to Spring Boot, which will convert it into a proper GraphQL query and send it to AppSync.
+# Examples
+
+Open your browser and enter the url: http://localhost:8080/query.
+
+`cd examples`
+
+Using the file example.txt, copy and paste each individual query and mutation into to browser text area.
+
+Click submit to post the query to the Spring Boot server. This will convert it into a proper GraphQL query and send it to AppSync.
 
 # Cleaning up
 When you are finished, don't forget to cleanup to avoid unwanted charges. From the project root directory, issue:
