@@ -1,5 +1,5 @@
 # cdk-examples
-The projects below are Java examples that use the AWS CDK (Cloud Development Kit). All examples are based on JDK 11. The CDK will build the Cloud Formation infrastructure using Java constructs.
+The projects below are Java examples that use the AWS CDK (Cloud Development Kit). All examples are based on JDK 11. The CDK builds the Cloud Formation infrastructure using Java constructs.
 Some of the examples use curl to invoke the API. Other examples use Spring Boot and Thymeleaf to build a simple browser UI.
  
  Developed and tested with:
